@@ -13,4 +13,4 @@ stages:
     script:
         - echo $NEXT_PUBLIC_API_URL; echo $NEXT_PUBLIC_API_URL; echo $NEXT_PUBLIC_DEPARTMENT
         - >
-            docker build -t pers --build-arg NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_API_URL --build-arg NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL .
+            docker build -t pers --build-arg NEXT_PUBLIC_APP_URL="https://onshorkin.com/i8fd90sd/v09cxvjksdf/xzs9/sda9" --build-arg NEXT_PUBLIC_API_URL="http://localhost:3000" .
