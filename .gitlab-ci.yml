@@ -1,0 +1,16 @@
+stages:
+    - build
+
+&build_job build-frontend-code-job:
+    stage: build
+    image: docker:latest
+    services:
+        - docker:24.0.5-dind
+    only:
+        changes:
+            - public/*
+            - src/*
+    script:
+        - echo $NEXT_PUBLIC_API_URL; echo $NEXT_PUBLIC_API_URL; echo $NEXT_PUBLIC_DEPARTMENT
+        - >
+            docker build -t pers --build-arg NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_API_URL --build-arg NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL .
